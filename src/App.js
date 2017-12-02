@@ -10,7 +10,7 @@ class App extends Component {
   handleKeyPress = (event) => {
     const key = event.key
     if (key.match(/[a-z]/i)) {
-      // console.log(key);
+      console.log('pressed:',key);
       this.props.newGuess(key)
     }
   }
@@ -19,12 +19,7 @@ class App extends Component {
 
   	const words = ['Pijnboompit', 'Alvleesklier', 'Snelkookpan', 'Hinkstapsprong', 'Maanzaadbrood', 'Doordrukstrip'];
   	const word = words[Math.floor(Math.random()*words.length)];
-    // const guesses = []
     const { guesses } = this.props || []
-    // console.log( guesses );
-    // if (!guesses && guesses.length > 0) {
-      // const guesses = []
-    // }
 
     return (
       <div className="App" tabIndex="0" onKeyDown={this.handleKeyPress}>
@@ -40,3 +35,6 @@ class App extends Component {
 }
 
 export default connect(null, { newGuess })(App)
+
+// const mapStateToProps = ({ newGuess }) => ({ newGuess })
+// export default connect(mapStateToProps)(App)/

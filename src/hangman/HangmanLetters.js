@@ -17,7 +17,7 @@ class HangmanLetters extends PureComponent {
 	render() {
 
 		const { word, guesses } = this.props
-
+		console.log('guesses:',guesses);
 
 		return (
 			<div className="hangman-letters">

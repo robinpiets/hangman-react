@@ -13,7 +13,6 @@ class HangmanContainer extends PureComponent {
 
 		return (
 			<div className="hangman-container">
-
 				<HangmanLetters word={word} guesses={guesses} />
 			</div>
 		)
