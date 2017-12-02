@@ -16,14 +16,15 @@ class HangmanLetters extends PureComponent {
 		// return <li key={index}>{topic.topic} <span>({topic.counter})</span></li>
 	}
 
-	renderGuess(input, index) {
+	renderGuess(input, index, iets1) {
+		console.log(input, index, iets1);
 		// console.log(input);
 		// var newWord = wordArray.map(function(x){
 	    //     if ( guesses.indexOf(x) > -1 ) return x
 	    //     else return '_'
 	    // })
 		// console.log(this.props);
-		return <span key={index} class="letter">{input}</span>
+		return <span key={index} className="letter">{input}</span>
 	}
 
 	render() {
@@ -32,8 +33,9 @@ class HangmanLetters extends PureComponent {
 
 
 		return (
-			<div class="hangman-letters">
-				{word.split("").map(this.renderGuess)}
+			<div className="hangman-letters">
+				{word.split("").map(this.renderGuess, guesses)}
+				{word.split("").map(this.renderGuess, guesses)}
 			</div>
 		)
 	}

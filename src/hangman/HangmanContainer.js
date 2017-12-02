@@ -16,7 +16,7 @@ class HangmanContainer extends PureComponent {
 		const guesses = ['a','b','c','d','e','f']
 
 		return (
-			<div class="hangman-container">
+			<div className="hangman-container">
 				<HangmanLetters word={word} guesses={guesses} />
 			</div>
 		)
