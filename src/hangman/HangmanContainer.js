@@ -11,12 +11,12 @@ class HangmanContainer extends PureComponent {
 
 		const words = ['Pijnboompit', 'Alvleesklier', 'Snelkookpan', 'Hinkstapsprong', 'Maanzaadbrood', 'Doordrukstrip'];
 		const word = words[Math.floor(Math.random()*words.length)];
-
-		// const guesses = ""
 		const guesses = ['a','b','c','d','e','f']
+
 
 		return (
 			<div className="hangman-container">
+
 				<HangmanLetters word={word} guesses={guesses} />
 			</div>
 		)
