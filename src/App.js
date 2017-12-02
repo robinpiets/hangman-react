@@ -10,7 +10,7 @@ class App extends Component {
           <h1 className="App-title">Hangman in React</h1>
         </header>
         <main>
-          <hangman />
+          <HangmanContainer />
         </main>
       </div>
     );

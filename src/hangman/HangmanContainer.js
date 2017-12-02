@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import HangmanLetters from './HangmanLetters'
 
 class HangmanContainer extends PureComponent {
 	static propTypes = {
@@ -7,9 +8,16 @@ class HangmanContainer extends PureComponent {
 	}
 
 	render() {
+
+		const words = ['Pijnboompit', 'Alvleesklier', 'Snelkookpan', 'Hinkstapsprong', 'Maanzaadbrood', 'Doordrukstrip'];
+		const word = words[Math.floor(Math.random()*words.length)];
+
+		// const guesses = ""
+		const guesses = ['a','b','c','d','e','f']
+
 		return (
 			<div class="hangman-container">
-				
+				<HangmanLetters word={word} guesses={guesses} />
 			</div>
 		)
 	}
