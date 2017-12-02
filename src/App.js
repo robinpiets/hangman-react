@@ -3,6 +3,7 @@ import './App.css';
 import HangmanContainer from './hangman/HangmanContainer'
 import { connect } from 'react-redux'
 import store from './store'
+import newGuess from './actions/actions'
 
 class App extends Component {
 
@@ -10,19 +11,20 @@ class App extends Component {
     const key = event.key
     if (key.match(/[a-z]/i)) {
       // console.log(key);
-      this.setState({
-        guess: key
-      })
+      this.props.newGuess(key)
     }
-
-    // guesses.on('action', payload => store.dispatch(payload))
   }
 
   render() {
 
   	const words = ['Pijnboompit', 'Alvleesklier', 'Snelkookpan', 'Hinkstapsprong', 'Maanzaadbrood', 'Doordrukstrip'];
   	const word = words[Math.floor(Math.random()*words.length)];
-    const guesses = []
+    // const guesses = []
+    const { guesses } = this.props || []
+    // console.log( guesses );
+    // if (!guesses && guesses.length > 0) {
+      // const guesses = []
+    // }
 
     return (
       <div className="App" tabIndex="0" onKeyDown={this.handleKeyPress}>
@@ -37,8 +39,4 @@ class App extends Component {
   }
 }
 
-// export default App;
-
-const mapStateToProps = ({ guesses }) => ({ guesses })
-
-export default connect(mapStateToProps)(App)
+export default connect(null, { newGuess })(App)

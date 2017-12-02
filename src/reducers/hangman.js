@@ -1,14 +1,18 @@
 // src/reducers/hangman.js
 
 import { GUESS } from '../actions/actions'
-const initialState = []
 
-export default function (state = initialState, { type, payload } = {}) {
+export default function (state = [], { type, payload } = {}) {
+	console.log('state = ',state, 'payload:',payload);
 	switch (type) {
 		case GUESS :
-			console.log('GUESS!');
-			// payload.slice(0, 10)
-	  		return payload
+			// console.log(payload);
+			if ( state.indexOf(payload) !== -1 ) {
+                console.log('You already gave this answer');
+            } else {
+                state.push(payload)
+            }
+	  		return state
 		default :
 			return state
 	}

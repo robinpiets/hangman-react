@@ -9,7 +9,7 @@ class HangmanLetters extends PureComponent {
 	renderGuess(guesses, letter, index, rest) {
 
 		let returnLetter = "_"
-        if ( guesses.indexOf(letter) > -1 ) returnLetter = letter
+        if ( guesses && guesses.length > 0 && guesses.indexOf(letter) > -1 ) returnLetter = letter
 
 		return <span key={index} className="letter">{returnLetter}</span>
 	}
