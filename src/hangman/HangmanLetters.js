@@ -17,10 +17,9 @@ class HangmanLetters extends PureComponent {
 	render() {
 
 		const { word, guesses } = this.props
-		console.log('guesses:',guesses);
 
 		return (
-			<div className="hangman-letters">
+			<div className="hangman-word-result">
 				{word.split("").map(this.renderGuess.bind(null, guesses))}
 			</div>
 		)

@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import './App.css';
 import HangmanContainer from './hangman/HangmanContainer'
-import { connect } from 'react-redux'
 import store from './store'
-import newGuess from './actions/actions'
+import addNewGuess from './actions/actions'
 
 class App extends Component {
 
   handleKeyPress = (event) => {
     const key = event.key
-    if (key.match(/[a-z]/i)) {
-      console.log('pressed:',key);
-      this.props.newGuess(key)
+    if (key.length == 1 && key.match(/[a-z]/i)) {
+      // console.log('0: props:',this.props);
+      // console.log('1: pressed:',key);
+      this.props.addGuessToProp(key)
+      // console.log('4: props:',this.props);
     }
   }
 
   render() {
-
-  	const words = ['Pijnboompit', 'Alvleesklier', 'Snelkookpan', 'Hinkstapsprong', 'Maanzaadbrood', 'Doordrukstrip'];
-  	const word = words[Math.floor(Math.random()*words.length)];
-    const { guesses } = this.props || []
+    const { guesses, word } = this.props.hangman
+    // console.log('guesses in app:',guesses);
+    if (!guesses || !word) return null
 
     return (
       <div className="App" tabIndex="0" onKeyDown={this.handleKeyPress}>
@@ -34,7 +35,16 @@ class App extends Component {
   }
 }
 
-export default connect(null, { newGuess })(App)
+const mapStateToProps = ({ hangman }) => ({ hangman })
+const mapDispatchToProps = { addGuessToProp: addNewGuess }
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+//
+// export default connect(null, mapDispatchToProps)(App)
+
+
+// export default connect(null, { newGuess })(App)
 
 // const mapStateToProps = ({ newGuess }) => ({ newGuess })
 // export default connect(mapStateToProps)(App)/

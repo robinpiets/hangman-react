@@ -1,19 +1,18 @@
 // src/reducers/hangman.js
-
 import { GUESS } from '../actions/actions'
 
-export default function (state = [], { type, payload } = {}) {
+const words = ['pijnboompit', 'alvleesklier', 'snelkookpan', 'hinkstapsprong', 'maanzaadbrood', 'doordrukstrip'];
+const randomNum = Math.floor(Math.random()*words.length);
+console.log(randomNum);
+const word = words[randomNum];
+const guesses = []
+
+export default (state = { word, guesses }, {type, payload} = {}) => {
 	// console.log('state = ',state, 'payload:',payload);
 	switch (type) {
 		case GUESS :
-			console.log('payload:',payload);
-			if ( state.indexOf(payload) !== -1 ) {
-                console.log('You already gave this answer');
-            } else {
-                state.push(payload)
-            }
-			console.log('state:',state);
-			return state
+			const { word, guesses } = state
+			return { word, guesses: [payload].concat(guesses) }
 		default :
 			return state
 	}
