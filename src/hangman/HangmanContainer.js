@@ -10,12 +10,12 @@ class HangmanContainer extends PureComponent {
 
 	render() {
 
-		const { word, guesses } = this.props
+		const { word, guesses, rightGuesses, wrongGuesses } = this.props
 
 		return (
 			<div className="hangman-container">
-				<HangmanHanging guesses={guesses} />
-				<HangmanLetters word={word} guesses={guesses} />
+				<HangmanHanging guesses={guesses} wrongGuesses={wrongGuesses} />
+				<HangmanLetters word={word} guesses={guesses} rightGuesses={rightGuesses} wrongGuesses={wrongGuesses} />
 			</div>
 		)
 	}

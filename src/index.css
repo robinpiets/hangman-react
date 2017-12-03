@@ -14,13 +14,14 @@ body {
     height: 400px;
     width: 400px;
     margin: auto;
-    background: red;
+    /*background: red;*/
 }
 .hanging-part {
     position: absolute;
     top: 0;
     left: 0;
     background-color: black;
+    transition: all .5s;
 }
 .render-1 {
     top: 100%;
@@ -49,6 +50,15 @@ body {
     width: 5px;
     height: 65px;
 }
+
+.render-hangman {
+    width: 120px;
+    height: 270px;
+    top: 35px;
+    left: 60%;
+    background: none;
+}
+/*
 .render-6 {
     top: 60px;
     left: 68%;
@@ -62,8 +72,7 @@ body {
     width: 5px;
     height: 200px;
 }
-
-
+*/
 /*Leg left*/
 .render-8 {
     top: 100px;

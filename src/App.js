@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   render() {
-    const { guesses, word } = this.props.hangman
+    const { guesses, word, rightGuesses, wrongGuesses } = this.props.hangman
     if (!guesses || !word) return null
 
     return (
@@ -24,7 +24,7 @@ class App extends Component {
           <h1 className="App-title">Hangman in React</h1>
         </header>
         <main>
-          <HangmanContainer word={word} guesses={guesses} />
+          <HangmanContainer word={word} guesses={guesses} rightGuesses={rightGuesses} wrongGuesses={wrongGuesses} />
         </main>
       </div>
     );

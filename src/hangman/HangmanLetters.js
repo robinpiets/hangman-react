@@ -24,7 +24,7 @@ class HangmanLetters extends PureComponent {
 
 	render() {
 
-		const { word, guesses } = this.props
+		const { word, guesses, wrongGuesses, rightGuesses } = this.props
 
 		return (
 			<div className="letter-results">
@@ -36,6 +36,8 @@ class HangmanLetters extends PureComponent {
 					{guesses.map(this.renderGuessedLetters)}
 				</div>
 				{guesses.length > 0 && <div className="guessed-count">Total guesses: {guesses.length}</div> }
+				{/*rightGuesses.length > 0 && <div className="right-guessed-count">Total right guesses: {rightGuesses.length}</div> */}
+				{wrongGuesses > 0 && <div className="wrong-guessed-count">Total wrong guesses: {wrongGuesses}</div> }
 			</div>
 		)
 	}
