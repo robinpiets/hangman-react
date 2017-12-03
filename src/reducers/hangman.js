@@ -12,7 +12,16 @@ export default (state = { word, guesses }, {type, payload} = {}) => {
 	switch (type) {
 		case GUESS :
 			const { word, guesses } = state
-			return { word, guesses: [payload].concat(guesses) }
+			if ( guesses.indexOf(payload) !== -1 ) {
+                console.log('You already gave this answer');
+            } else {
+                // push the guess
+				const newArray = guesses.concat()
+				console.log( newArray.push(payload) );
+
+                return { word, guesses: newArray }
+            }
+
 		default :
 			return state
 	}
