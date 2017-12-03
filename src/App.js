@@ -35,12 +35,3 @@ const mapStateToProps = ({ hangman }) => ({ hangman })
 const mapDispatchToProps = { addGuessToProp: addNewGuess }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
-
-//
-// export default connect(null, mapDispatchToProps)(App)
-
-
-// export default connect(null, { newGuess })(App)
-
-// const mapStateToProps = ({ newGuess }) => ({ newGuess })
-// export default connect(mapStateToProps)(App)/

@@ -9,7 +9,7 @@ class HangmanHanging extends PureComponent {
 
 	renderHangman(wrongGuesses) {
 		var renders = []
-		console.log('render:', wrongGuesses);
+		// console.log('render:', wrongGuesses);
 		for (var i = 1; i < (wrongGuesses + 1); i++) {
 			renders.push( <div key={i} className={"hanging-part rendered render-" + i}></div> )
 		}
@@ -18,22 +18,15 @@ class HangmanHanging extends PureComponent {
 		}
 		return renders;
 	}
-	hideOthers(guesses){
-		for (var i = 0; i < 11; i++) {
-			// console.log(<p>i</p>)
-			// if ( i < guesses.length ) return (<div key={i} className={"hanging-part render-" + i}></div>)
-		}
-	}
 
 	render() {
 
 		const { word, guesses, wrongGuesses } = this.props
-		console.log(wrongGuesses);
+		// console.log(wrongGuesses);
 
 		return (
 			<div className="hangman-hanging">
 				{this.renderHangman(wrongGuesses)}
-				{/*this.hideOthers({wrongGuesses})*/}
 			</div>
 		)
 	}
