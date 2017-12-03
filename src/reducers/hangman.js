@@ -1,10 +1,10 @@
 // src/reducers/hangman.js
 import { GUESS } from '../actions/actions'
 
-const words = ['pijnboompit', 'alvleesklier', 'snelkookpan', 'hinkstapsprong', 'maanzaadbrood', 'doordrukstrip'];
+const words = ['doordrukstrip', 'hangbuikzwijn', 'blokfluitles', 'alvleesklier', 'snelkookpan', 'hinkstapsprong', 'maanzaadbrood'];
 const randomNum = Math.floor(Math.random()*words.length);
-console.log(randomNum);
 const word = words[randomNum];
+console.log(randomNum + 1);
 const guesses = []
 
 export default (state = { word, guesses }, {type, payload} = {}) => {

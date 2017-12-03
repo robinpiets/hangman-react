@@ -32,8 +32,10 @@ class HangmanLetters extends PureComponent {
 					{word.split("").map(this.renderGuess.bind(null, guesses))}
 				</div>
 				<div className="guessed-letters">
-					Guessed letters: {guesses.map(this.renderGuessedLetters)}
+					{guesses.length > 0 && 'Guessed letters: '}<br/>
+					{guesses.map(this.renderGuessedLetters)}
 				</div>
+				{guesses.length > 0 && <div className="guessed-count">Total guesses: {guesses.length}</div> }
 			</div>
 		)
 	}

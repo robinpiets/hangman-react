@@ -8,18 +8,114 @@ body {
     margin: 50px;
 }
 
+
+.hangman-hanging {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    background: red;
+}
+.hanging-part {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+.render-1 {
+    top: 100%;
+    width: 100%;
+    height: 5px;
+}
+.render-2 {
+    width: 5px;
+    height: 100%;
+    left: 50px;
+}
+.render-3 {
+    top: 0;
+    width: 75%;
+    height: 5px;
+}
+.render-4 {
+    top: -10px;
+    left: 80px;
+    width: 5px;
+    height: 80px;
+    transform: rotate(45deg)
+}
+.render-5 {
+    left: 75%;
+    width: 5px;
+    height: 65px;
+}
+.render-6 {
+    top: 60px;
+    left: 68%;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+.render-7 {
+    top: 60px;
+    left: 75%;
+    width: 5px;
+    height: 200px;
+}
+
+
+/*Leg left*/
+.render-8 {
+    top: 100px;
+    left: 68%;
+    width: 5px;
+    height: 80px;
+    transform: rotate(-45deg);
+}
+/*Leg Right*/
+.render-9 {
+    top: 100px;
+    left: 82%;
+    width: 5px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+/*Leg left*/
+.render-10 {
+    top: 246px;
+    left: 68%;
+    width: 5px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+/*Leg Right*/
+.render-11 {
+    top: 246px;
+    left: 82%;
+    width: 5px;
+    height: 80px;
+    transform: rotate(-45deg);
+}
+
+
 .letter-results {
 
 }
 .word-result {
-    margin-top: 100px;
+    margin-top: 30px;
 	font-size: 300%;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .letter {
+    display: inline-block;
+    width: 30px;
 	margin: 10px;
 }
 
 .guessed-letters {
     margin-top: 150px;
+}
+
+.guessed-count {
+    margin-top: 20px;
 }
