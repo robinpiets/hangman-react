@@ -10,16 +10,12 @@ class App extends Component {
   handleKeyPress = (event) => {
     const key = event.key
     if (key.length == 1 && key.match(/[a-z]/i)) {
-      // console.log('0: props:',this.props);
-      // console.log('1: pressed:',key);
       this.props.addGuessToProp(key)
-      // console.log('4: props:',this.props);
     }
   }
 
   render() {
     const { guesses, word } = this.props.hangman
-    // console.log('guesses in app:',guesses);
     if (!guesses || !word) return null
 
     return (
