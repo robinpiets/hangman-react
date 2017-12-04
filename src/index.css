@@ -8,6 +8,11 @@ body {
     margin: 50px;
 }
 
+.hangman-state {
+    height: 40px;
+    margin-bottom: 40px;
+    font-size: 35px;
+}
 
 .hangman-hanging {
     position: relative;
@@ -122,7 +127,7 @@ body {
 }
 
 .guessed-letters {
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .guessed-count {
