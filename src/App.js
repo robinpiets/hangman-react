@@ -19,7 +19,7 @@ class App extends Component {
     if (!guesses || !word) return null
 
     return (
-      <div className="App" tabIndex="0" onKeyDown={this.handleKeyPress}>
+      <div className="App" tabIndex="0" onKeyUp={this.handleKeyPress} autoFocus>
         <header className="App-header">
           <h1 className="App-title">Hangman in React</h1>
         </header>

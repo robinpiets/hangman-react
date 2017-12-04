@@ -36,7 +36,7 @@ class HangmanLetters extends PureComponent {
 					{guesses.map(this.renderGuessedLetters)}
 				</div>
 				{guesses.length > 0 && <div className="guessed-count">Total guesses: {guesses.length}</div> }
-				{wrongGuesses > 0 && <div className="wrong-guessed-count">Total wrong guesses: {wrongGuesses}</div> }
+				{wrongGuesses > 0 && <div className="wrong-guessed-count">Total wrong guesses: {wrongGuesses} / 6</div> }
 			</div>
 		)
 	}
